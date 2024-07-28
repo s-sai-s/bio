@@ -47,7 +47,8 @@
     <div class="social-links text-center">
       <a href="https://www.linkedin.com/in/sai-srinivas-samoju" target="_blank" class="linkedin"><i class="bi bi-linkedin"></i></a>
       <a href="https://github.com/saisrinivas-samoju" target="_blank" class="github"><i class="bi bi-github"></i></i></a>
-      <a href="#" title= "live:samoju.saisrinivas" class="skype"><i class="bi bi-skype"></i></a>
+      <a href="#nowhere" title= "live:samoju.saisrinivas" id="skype-anchor" class="skype"><i class="bi bi-skype"></i></a>
+      <p id="skype-text" style="display: none; color:aqua">live:samoju.saisrinivas</p>
 
       
       
@@ -433,12 +434,13 @@
                   <label for="message-field" class="pb-2">Message</label>
                   <textarea name="message" class="form-control" name="message" rows="4" id="message-field" required=""></textarea>
                 </div>
-
+                <input type="hidden" name="_captcha" value="false">
+                <input type="text" name="_honey" style="display:none">
+                <input type="hidden" name="_next" value="thankyou.html">
                 <div class="col-md-12 text-center">
-                  <div class="loading">Loading...</div>
-                  <div class="error-message">Error in submission, Try again later.</div>
+                  <div class="loading">Loading</div>
+                  <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
-
                   <button type="submit">Submit Form</button>
                 </div>
 
@@ -486,6 +488,18 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script>
+  const anchor = document.getElementById('skype-anchor');
+const paragraph = document.getElementById('skype-text');
+
+anchor.addEventListener('click', () => {
+  paragraph.style.display = 'block' ; // Change the display to visible
+    // Hide the paragraph after 3 seconds
+    setTimeout(() => {
+    paragraph.style.display = 'none';
+  }, 3000);
+});
+</script>
 
 
 </body>
